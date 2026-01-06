@@ -1,10 +1,5 @@
 /* 
- * VPDS Styles Wrapper
- * Imports must come first, then Tailwind directives
+ * This file is no longer used - VPDS styles are imported in main.tsx
+ * per official Visa documentation which recommends JavaScript imports.
+ * This file can be deleted.
  */
-@import '@visa/nova-styles/styles.css';
-@import '@visa/nova-styles/themes/visa-light/index.css';
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
