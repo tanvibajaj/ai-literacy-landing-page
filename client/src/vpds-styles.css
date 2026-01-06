@@ -1,0 +1,10 @@
+/* 
+ * VPDS Styles Wrapper
+ * Imports must come first, then Tailwind directives
+ */
+@import '@visa/nova-styles/styles.css';
+@import '@visa/nova-styles/themes/visa-light/index.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

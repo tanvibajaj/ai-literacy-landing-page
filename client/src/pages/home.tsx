@@ -8,9 +8,6 @@ import {
   Link,
   Utility,
   Nav,
-  NavList,
-  NavListItem,
-  NavListLink,
   Divider,
   Badge,
   Input,
@@ -18,70 +15,49 @@ import {
   Checkbox,
   Radio,
   Select,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
   Accordion,
   AccordionHeading,
   AccordionPanel,
-  AccordionSection,
-  Dialog,
-  DialogCloseButton,
-  DialogContent,
-  DialogTitle,
   Progress,
   Toggle,
   Avatar,
-  AvatarBadge,
-  Listbox,
-  ListboxOption,
-  ListboxSection,
+  VisaLogo,
 } from '@visa/nova-react';
 import {
-  VisaMaxLow,
   GenericAccountLow,
   GenericArrowRightTiny,
   GenericCheckmarkTiny,
   GenericCloseTiny,
-  GenericGlobeTiny,
-  GenericHeartTiny,
+  GenericCheckInternationalTiny,
+  GenericLikeTiny,
   GenericHomeLow,
   GenericInformationLow,
-  GenericLightningTiny,
-  GenericLockTiny,
-  GenericMailLow,
+  GenericFastTiny,
+  GenericSecurityLockTiny,
+  GenericEmailLow,
   GenericSettingsLow,
-  GenericStarTiny,
-  GenericUserLow,
+  GenericFavoriteStarFillTiny,
 } from '@visa/nova-icons-react';
 import { useState } from 'react';
 
 export default function Home() {
-  const [dialogOpen, setDialogOpen] = useState(false);
   const [toggleChecked, setToggleChecked] = useState(false);
   const [selectedTab, setSelectedTab] = useState(0);
+  const [accordionOpen, setAccordionOpen] = useState<number | null>(0);
 
   return (
-    <Utility vFlex vFlexCol className="v-min-h-screen">
-      <Nav tag="header" className="v-bg-surface-1">
+    <Utility vFlex vFlexCol className="v-min-h-screen v-bg-surface-1">
+      <Nav tag="header" className="v-bg-surface-2 v-border-b v-border-default">
         <Utility vFlex vAlignItems="center" vJustifyContent="between" vPaddingHorizontal={24} vPaddingVertical={16} className="v-w-full v-max-w-7xl v-mx-auto">
-          <Utility vFlex vAlignItems="center" vGap={8}>
-            <VisaMaxLow />
+          <Utility vFlex vAlignItems="center" vGap={12}>
+            <VisaLogo />
             <Typography variant="headline-4" tag="span">VPDS Showcase</Typography>
           </Utility>
-          <NavList>
-            <NavListItem>
-              <NavListLink href="#components" data-testid="link-components">Components</NavListLink>
-            </NavListItem>
-            <NavListItem>
-              <NavListLink href="#forms" data-testid="link-forms">Forms</NavListLink>
-            </NavListItem>
-            <NavListItem>
-              <NavListLink href="#features" data-testid="link-features">Features</NavListLink>
-            </NavListItem>
-          </NavList>
+          <Utility vFlex vGap={16}>
+            <Link href="#components" data-testid="link-components">Components</Link>
+            <Link href="#forms" data-testid="link-forms">Forms</Link>
+            <Link href="#features" data-testid="link-features">Features</Link>
+          </Utility>
           <Utility vFlex vGap={8}>
             <Button variant="tertiary" data-testid="button-signin">
               <GenericAccountLow />
@@ -93,10 +69,10 @@ export default function Home() {
       </Nav>
 
       <Utility tag="main" vFlex vFlexCol vFlexGrow={1}>
-        <Utility className="v-bg-gradient-to-br v-from-surface-1 v-to-surface-2" vPaddingVertical={80}>
+        <Utility className="v-bg-surface-2" vPaddingVertical={80}>
           <Utility vFlex vFlexCol vAlignItems="center" vGap={24} className="v-max-w-4xl v-mx-auto v-text-center" vPaddingHorizontal={24}>
             <Badge colorScheme="info">
-              <GenericLightningTiny />
+              <GenericFastTiny />
               Powered by Visa Design System
             </Badge>
             <Typography variant="display-2" tag="h1" data-testid="text-hero-title">
@@ -124,50 +100,38 @@ export default function Home() {
               <Typography variant="headline-2" tag="h2" data-testid="text-features-title">
                 Why Choose VPDS?
               </Typography>
-              <Typography variant="body-1" className="v-text-subtle v-max-w-2xl">
-                Unlock the potential of your ideas on a global scale with our comprehensive design system.
+              <Typography variant="body-1" className="v-text-subtle">
+                Built by Visa, trusted by global enterprises
               </Typography>
             </Utility>
 
-            <Utility vFlex vFlexWrap vGap={24} vJustifyContent="center">
-              <ContentCard className="v-w-80" data-testid="card-feature-accessibility">
+            <Utility vFlex vFlexWrap vJustifyContent="center" vGap={24}>
+              <ContentCard className="v-w-80">
                 <ContentCardBody>
-                  <Utility vFlex vFlexCol vGap={16}>
-                    <Utility vFlex vAlignItems="center" vJustifyContent="center" className="v-w-12 v-h-12 v-rounded-full v-bg-surface-2">
-                      <GenericCheckmarkTiny className="v-text-positive" />
-                    </Utility>
-                    <ContentCardTitle variant="headline-4">Accessibility First</ContentCardTitle>
-                    <Typography variant="body-2" className="v-text-subtle">
-                      All components are pre-tested for WCAG 2.2 AA compliance, ensuring inclusive experiences for everyone.
-                    </Typography>
+                  <Utility vFlex vFlexCol vGap={12}>
+                    <GenericSecurityLockTiny className="v-text-active" />
+                    <ContentCardTitle>Enterprise Security</ContentCardTitle>
+                    <ContentCardSubtitle>Built-in accessibility and security compliance for payment interfaces</ContentCardSubtitle>
                   </Utility>
                 </ContentCardBody>
               </ContentCard>
 
-              <ContentCard className="v-w-80" data-testid="card-feature-scalable">
+              <ContentCard className="v-w-80">
                 <ContentCardBody>
-                  <Utility vFlex vFlexCol vGap={16}>
-                    <Utility vFlex vAlignItems="center" vJustifyContent="center" className="v-w-12 v-h-12 v-rounded-full v-bg-surface-2">
-                      <GenericGlobeTiny className="v-text-info" />
-                    </Utility>
-                    <ContentCardTitle variant="headline-4">Globally Scalable</ContentCardTitle>
-                    <Typography variant="body-2" className="v-text-subtle">
-                      Design tokens enable consistent, scalable results across products and platforms worldwide.
-                    </Typography>
+                  <Utility vFlex vFlexCol vGap={12}>
+                    <GenericFastTiny className="v-text-active" />
+                    <ContentCardTitle>Fast Development</ContentCardTitle>
+                    <ContentCardSubtitle>Pre-built components reduce development time by up to 60%</ContentCardSubtitle>
                   </Utility>
                 </ContentCardBody>
               </ContentCard>
 
-              <ContentCard className="v-w-80" data-testid="card-feature-flexible">
+              <ContentCard className="v-w-80">
                 <ContentCardBody>
-                  <Utility vFlex vFlexCol vGap={16}>
-                    <Utility vFlex vAlignItems="center" vJustifyContent="center" className="v-w-12 v-h-12 v-rounded-full v-bg-surface-2">
-                      <GenericLockTiny className="v-text-warning" />
-                    </Utility>
-                    <ContentCardTitle variant="headline-4">Enterprise Ready</ContentCardTitle>
-                    <Typography variant="body-2" className="v-text-subtle">
-                      Built with security best practices and minimal dependencies for production-grade applications.
-                    </Typography>
+                  <Utility vFlex vFlexCol vGap={12}>
+                    <GenericCheckInternationalTiny className="v-text-active" />
+                    <ContentCardTitle>Global Standards</ContentCardTitle>
+                    <ContentCardSubtitle>Consistent design language across all Visa touchpoints worldwide</ContentCardSubtitle>
                   </Utility>
                 </ContentCardBody>
               </ContentCard>
@@ -177,240 +141,217 @@ export default function Home() {
 
         <Divider />
 
-        <Utility id="components" className="v-bg-surface-1" vPaddingVertical={64} vPaddingHorizontal={24}>
+        <Utility id="components" vPaddingVertical={64} vPaddingHorizontal={24} className="v-bg-surface-2">
           <Utility vFlex vFlexCol vGap={48} className="v-max-w-7xl v-mx-auto">
             <Utility vFlex vFlexCol vAlignItems="center" vGap={16} className="v-text-center">
-              <Typography variant="headline-2" tag="h2" data-testid="text-components-title">
+              <Typography variant="headline-2" tag="h2">
                 Component Showcase
               </Typography>
-              <Typography variant="body-1" className="v-text-subtle v-max-w-2xl">
-                Explore our comprehensive library of pre-built, customizable components.
+              <Typography variant="body-1" className="v-text-subtle">
+                Explore our rich library of components
               </Typography>
             </Utility>
 
-            <Tabs selectedIndex={selectedTab} onChange={(index) => setSelectedTab(index)}>
-              <TabList>
-                <Tab data-testid="tab-buttons">Buttons</Tab>
-                <Tab data-testid="tab-cards">Cards</Tab>
-                <Tab data-testid="tab-feedback">Feedback</Tab>
-                <Tab data-testid="tab-navigation">Navigation</Tab>
-              </TabList>
-              <TabPanels>
-                <TabPanel>
-                  <Utility vPaddingTop={24} vFlex vFlexCol vGap={24}>
-                    <Typography variant="headline-5">Button Variants</Typography>
-                    <Utility vFlex vFlexWrap vGap={16} vAlignItems="center">
+            <Utility vFlex vFlexCol vGap={16}>
+              <Utility vFlex vGap={8} role="tablist" aria-label="Component categories">
+                <Button 
+                  variant={selectedTab === 0 ? "secondary" : "tertiary"} 
+                  onClick={() => setSelectedTab(0)} 
+                  data-testid="tab-buttons"
+                  role="tab"
+                  aria-selected={selectedTab === 0}
+                  aria-controls="panel-buttons"
+                  id="tab-btn-buttons"
+                >
+                  Buttons
+                </Button>
+                <Button 
+                  variant={selectedTab === 1 ? "secondary" : "tertiary"} 
+                  onClick={() => setSelectedTab(1)} 
+                  data-testid="tab-cards"
+                  role="tab"
+                  aria-selected={selectedTab === 1}
+                  aria-controls="panel-cards"
+                  id="tab-btn-cards"
+                >
+                  Cards
+                </Button>
+                <Button 
+                  variant={selectedTab === 2 ? "secondary" : "tertiary"} 
+                  onClick={() => setSelectedTab(2)} 
+                  data-testid="tab-feedback"
+                  role="tab"
+                  aria-selected={selectedTab === 2}
+                  aria-controls="panel-feedback"
+                  id="tab-btn-feedback"
+                >
+                  Feedback
+                </Button>
+                <Button 
+                  variant={selectedTab === 3 ? "secondary" : "tertiary"} 
+                  onClick={() => setSelectedTab(3)} 
+                  data-testid="tab-navigation"
+                  role="tab"
+                  aria-selected={selectedTab === 3}
+                  aria-controls="panel-navigation"
+                  id="tab-btn-navigation"
+                >
+                  Navigation
+                </Button>
+              </Utility>
+
+              <Utility className="v-bg-surface-1 v-p-6 v-rounded-md" role="tabpanel" id={`panel-${['buttons', 'cards', 'feedback', 'navigation'][selectedTab]}`} aria-labelledby={`tab-btn-${['buttons', 'cards', 'feedback', 'navigation'][selectedTab]}`}>
+                {selectedTab === 0 && (
+                  <Utility vFlex vFlexCol vGap={24}>
+                    <Typography variant="headline-4">Button Variants</Typography>
+                    <Utility vFlex vGap={12} vFlexWrap>
                       <Button data-testid="button-primary">Primary</Button>
                       <Button variant="secondary" data-testid="button-secondary">Secondary</Button>
                       <Button variant="tertiary" data-testid="button-tertiary">Tertiary</Button>
                       <Button variant="subtle" data-testid="button-subtle">Subtle</Button>
                     </Utility>
-                    <Typography variant="headline-5">Button Sizes</Typography>
-                    <Utility vFlex vFlexWrap vGap={16} vAlignItems="center">
+                    <Typography variant="headline-4">Button Sizes</Typography>
+                    <Utility vFlex vGap={12} vFlexWrap vAlignItems="center">
                       <Button size="small" data-testid="button-small">Small</Button>
                       <Button size="medium" data-testid="button-medium">Medium</Button>
                       <Button size="large" data-testid="button-large">Large</Button>
                     </Utility>
-                    <Typography variant="headline-5">Button States</Typography>
-                    <Utility vFlex vFlexWrap vGap={16} vAlignItems="center">
-                      <Button data-testid="button-enabled">Enabled</Button>
-                      <Button disabled data-testid="button-disabled">Disabled</Button>
-                      <Button colorScheme="negative" data-testid="button-negative">Destructive</Button>
-                    </Utility>
-                    <Typography variant="headline-5">Buttons with Icons</Typography>
-                    <Utility vFlex vFlexWrap vGap={16} vAlignItems="center">
-                      <Button data-testid="button-with-icon-left">
-                        <GenericHeartTiny />
+                    <Typography variant="headline-4">With Icons</Typography>
+                    <Utility vFlex vGap={12} vFlexWrap>
+                      <Button data-testid="button-icon-left">
+                        <GenericLikeTiny />
                         Like
                       </Button>
-                      <Button variant="secondary" data-testid="button-with-icon-right">
-                        Continue
+                      <Button variant="secondary" data-testid="button-icon-right">
+                        Next
                         <GenericArrowRightTiny />
                       </Button>
-                      <Button variant="tertiary" iconOnly aria-label="Settings" data-testid="button-icon-only">
-                        <GenericSettingsLow />
-                      </Button>
                     </Utility>
                   </Utility>
-                </TabPanel>
+                )}
 
-                <TabPanel>
-                  <Utility vPaddingTop={24} vFlex vFlexWrap vGap={24}>
-                    <ContentCard className="v-w-72" data-testid="card-example-1">
-                      <ContentCardBody>
-                        <Utility vFlex vFlexCol vGap={12}>
-                          <Avatar size="large">
-                            <GenericUserLow />
-                          </Avatar>
-                          <ContentCardTitle variant="headline-5">Alex Johnson</ContentCardTitle>
-                          <ContentCardSubtitle>Product Designer</ContentCardSubtitle>
-                          <Typography variant="body-2" className="v-text-subtle">
-                            Building beautiful experiences with VPDS components.
-                          </Typography>
-                          <Utility vFlex vGap={8}>
-                            <Button size="small">Connect</Button>
-                            <Button size="small" variant="secondary">Message</Button>
+                {selectedTab === 1 && (
+                  <Utility vFlex vFlexCol vGap={24}>
+                    <Typography variant="headline-4">Content Cards</Typography>
+                    <Utility vFlex vGap={16} vFlexWrap>
+                      <ContentCard className="v-w-64" data-testid="card-1">
+                        <ContentCardBody>
+                          <ContentCardTitle>Card Title</ContentCardTitle>
+                          <ContentCardSubtitle>This is a basic content card with title and subtitle</ContentCardSubtitle>
+                        </ContentCardBody>
+                      </ContentCard>
+                      <ContentCard className="v-w-64" data-testid="card-2">
+                        <ContentCardBody>
+                          <Utility vFlex vFlexCol vGap={12}>
+                            <GenericFavoriteStarFillTiny className="v-text-warning" />
+                            <ContentCardTitle>Featured Card</ContentCardTitle>
+                            <ContentCardSubtitle>Cards can include icons and other elements</ContentCardSubtitle>
+                            <Button size="small">Learn More</Button>
                           </Utility>
-                        </Utility>
-                      </ContentCardBody>
-                    </ContentCard>
-
-                    <ContentCard className="v-w-72" borderBlockEnd data-testid="card-example-2">
-                      <ContentCardBody>
-                        <Utility vFlex vFlexCol vGap={12}>
-                          <Badge colorScheme="positive">New</Badge>
-                          <ContentCardTitle variant="headline-5">Premium Plan</ContentCardTitle>
-                          <Typography variant="display-3" tag="span">$29</Typography>
-                          <Typography variant="body-2" className="v-text-subtle">/month</Typography>
-                          <Utility vFlex vFlexCol vGap={8}>
-                            <Utility vFlex vGap={8} vAlignItems="center">
-                              <GenericCheckmarkTiny className="v-text-positive" />
-                              <Typography variant="body-2">Unlimited projects</Typography>
-                            </Utility>
-                            <Utility vFlex vGap={8} vAlignItems="center">
-                              <GenericCheckmarkTiny className="v-text-positive" />
-                              <Typography variant="body-2">Priority support</Typography>
-                            </Utility>
-                            <Utility vFlex vGap={8} vAlignItems="center">
-                              <GenericCheckmarkTiny className="v-text-positive" />
-                              <Typography variant="body-2">Advanced analytics</Typography>
-                            </Utility>
-                          </Utility>
-                          <Button className="v-w-full">Subscribe</Button>
-                        </Utility>
-                      </ContentCardBody>
-                    </ContentCard>
-
-                    <ContentCard className="v-w-72" data-testid="card-example-3">
-                      <ContentCardBody>
-                        <Utility vFlex vFlexCol vGap={12}>
-                          <Utility vFlex vJustifyContent="between" vAlignItems="center">
-                            <GenericMailLow />
-                            <Badge colorScheme="warning">3 unread</Badge>
-                          </Utility>
-                          <ContentCardTitle variant="headline-5">Inbox</ContentCardTitle>
-                          <Typography variant="body-2" className="v-text-subtle">
-                            You have new messages waiting for your response.
-                          </Typography>
-                          <Link href="#" data-testid="link-view-messages">
-                            View messages
-                            <GenericArrowRightTiny />
-                          </Link>
-                        </Utility>
-                      </ContentCardBody>
-                    </ContentCard>
+                        </ContentCardBody>
+                      </ContentCard>
+                    </Utility>
                   </Utility>
-                </TabPanel>
+                )}
 
-                <TabPanel>
-                  <Utility vPaddingTop={24} vFlex vFlexCol vGap={24}>
-                    <Typography variant="headline-5">Badges</Typography>
-                    <Utility vFlex vFlexWrap vGap={12}>
-                      <Badge data-testid="badge-default">Default</Badge>
-                      <Badge colorScheme="info" data-testid="badge-info">Info</Badge>
-                      <Badge colorScheme="positive" data-testid="badge-positive">Success</Badge>
+                {selectedTab === 2 && (
+                  <Utility vFlex vFlexCol vGap={24}>
+                    <Typography variant="headline-4">Badges</Typography>
+                    <Utility vFlex vGap={12} vFlexWrap>
+                      <Badge colorScheme="info" data-testid="badge-info">
+                        <GenericInformationLow />
+                        Info
+                      </Badge>
+                      <Badge colorScheme="positive" data-testid="badge-success">
+                        <GenericCheckmarkTiny />
+                        Success
+                      </Badge>
                       <Badge colorScheme="warning" data-testid="badge-warning">Warning</Badge>
-                      <Badge colorScheme="negative" data-testid="badge-negative">Error</Badge>
+                      <Badge colorScheme="negative" data-testid="badge-error">
+                        <GenericCloseTiny />
+                        Error
+                      </Badge>
                     </Utility>
-
-                    <Typography variant="headline-5">Progress</Typography>
+                    <Typography variant="headline-4">Progress</Typography>
                     <Utility vFlex vFlexCol vGap={12} className="v-w-full v-max-w-md">
-                      <Progress value={25} max={100} label="25% Complete" data-testid="progress-25" />
-                      <Progress value={50} max={100} label="50% Complete" data-testid="progress-50" />
-                      <Progress value={75} max={100} label="75% Complete" data-testid="progress-75" />
-                      <Progress value={100} max={100} label="100% Complete" data-testid="progress-100" />
+                      <Progress value={25} data-testid="progress-25" />
+                      <Progress value={50} data-testid="progress-50" />
+                      <Progress value={75} data-testid="progress-75" />
                     </Utility>
-
-                    <Typography variant="headline-5">Dialog</Typography>
-                    <Button onClick={() => setDialogOpen(true)} data-testid="button-open-dialog">
-                      Open Dialog
-                    </Button>
-                    <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)}>
-                      <DialogContent>
-                        <DialogCloseButton onClick={() => setDialogOpen(false)} data-testid="button-close-dialog" />
-                        <DialogTitle>Confirm Action</DialogTitle>
-                        <Typography variant="body-1" className="v-py-4">
-                          Are you sure you want to proceed with this action? This cannot be undone.
-                        </Typography>
-                        <Utility vFlex vGap={12} vJustifyContent="end">
-                          <Button variant="secondary" onClick={() => setDialogOpen(false)} data-testid="button-dialog-cancel">
-                            Cancel
-                          </Button>
-                          <Button onClick={() => setDialogOpen(false)} data-testid="button-dialog-confirm">
-                            Confirm
-                          </Button>
-                        </Utility>
-                      </DialogContent>
-                    </Dialog>
-
-                    <Typography variant="headline-5">Toggle</Typography>
-                    <Utility vFlex vGap={16} vAlignItems="center">
+                    <Typography variant="headline-4">Toggle</Typography>
+                    <Utility vFlex vAlignItems="center" vGap={12}>
                       <Toggle 
                         checked={toggleChecked} 
                         onChange={() => setToggleChecked(!toggleChecked)}
-                        data-testid="toggle-example"
+                        data-testid="toggle-switch"
                       />
-                      <Typography variant="body-1">
-                        Notifications are {toggleChecked ? 'enabled' : 'disabled'}
+                      <Typography variant="body-2">
+                        {toggleChecked ? 'Enabled' : 'Disabled'}
                       </Typography>
                     </Utility>
                   </Utility>
-                </TabPanel>
+                )}
 
-                <TabPanel>
-                  <Utility vPaddingTop={24} vFlex vFlexCol vGap={24}>
-                    <Typography variant="headline-5">Accordion</Typography>
-                    <Accordion>
-                      <AccordionSection>
-                        <AccordionHeading data-testid="accordion-heading-1">What is VPDS?</AccordionHeading>
-                        <AccordionPanel>
-                          <Typography variant="body-1">
-                            The Visa Product Design System (VPDS) is a comprehensive design system 
-                            built to help teams create world-class payment experiences with pre-built, 
-                            accessibility-approved components.
-                          </Typography>
-                        </AccordionPanel>
-                      </AccordionSection>
-                      <AccordionSection>
-                        <AccordionHeading data-testid="accordion-heading-2">How do I get started?</AccordionHeading>
-                        <AccordionPanel>
-                          <Typography variant="body-1">
-                            Install the @visa/nova-react and @visa/nova-styles packages via npm, 
-                            import the styles at your application root, and start using components.
-                          </Typography>
-                        </AccordionPanel>
-                      </AccordionSection>
-                      <AccordionSection>
-                        <AccordionHeading data-testid="accordion-heading-3">Is VPDS accessible?</AccordionHeading>
-                        <AccordionPanel>
-                          <Typography variant="body-1">
-                            Yes! All VPDS components are rigorously tested for WCAG 2.2 AA compliance 
-                            using Axe and other accessibility testing tools.
-                          </Typography>
-                        </AccordionPanel>
-                      </AccordionSection>
-                    </Accordion>
-
-                    <Typography variant="headline-5">Avatars</Typography>
-                    <Utility vFlex vGap={16} vAlignItems="center">
-                      <Avatar size="small" data-testid="avatar-small">
-                        <GenericUserLow />
-                      </Avatar>
-                      <Avatar size="medium" data-testid="avatar-medium">
-                        <GenericUserLow />
-                      </Avatar>
-                      <Avatar size="large" data-testid="avatar-large">
-                        <GenericUserLow />
-                      </Avatar>
-                      <Avatar size="large" data-testid="avatar-with-badge">
-                        <GenericUserLow />
-                        <AvatarBadge colorScheme="positive" />
-                      </Avatar>
+                {selectedTab === 3 && (
+                  <Utility vFlex vFlexCol vGap={24}>
+                    <Typography variant="headline-4">Links</Typography>
+                    <Utility vFlex vGap={16} vFlexWrap>
+                      <Link href="#" data-testid="link-default">Default Link</Link>
+                      <Link href="#" data-testid="link-external">External Link</Link>
                     </Utility>
+                    <Typography variant="headline-4">Accordion</Typography>
+                    <Accordion>
+                      <Utility vFlex vFlexCol className="v-border v-border-default v-rounded-md">
+                        <AccordionHeading 
+                          expanded={accordionOpen === 0}
+                          onClick={() => setAccordionOpen(accordionOpen === 0 ? null : 0)}
+                          data-testid="accordion-heading-1"
+                        >
+                          What is VPDS?
+                        </AccordionHeading>
+                        <AccordionPanel expanded={accordionOpen === 0}>
+                          <Utility vPadding={16}>
+                            <Typography variant="body-2">
+                              VPDS is the Visa Product Design System, a comprehensive design system for building payment experiences.
+                            </Typography>
+                          </Utility>
+                        </AccordionPanel>
+                        <Divider />
+                        <AccordionHeading 
+                          expanded={accordionOpen === 1}
+                          onClick={() => setAccordionOpen(accordionOpen === 1 ? null : 1)}
+                          data-testid="accordion-heading-2"
+                        >
+                          How do I get started?
+                        </AccordionHeading>
+                        <AccordionPanel expanded={accordionOpen === 1}>
+                          <Utility vPadding={16}>
+                            <Typography variant="body-2">
+                              Install the packages from npm and import the components you need.
+                            </Typography>
+                          </Utility>
+                        </AccordionPanel>
+                        <Divider />
+                        <AccordionHeading 
+                          expanded={accordionOpen === 2}
+                          onClick={() => setAccordionOpen(accordionOpen === 2 ? null : 2)}
+                          data-testid="accordion-heading-3"
+                        >
+                          Is it accessible?
+                        </AccordionHeading>
+                        <AccordionPanel expanded={accordionOpen === 2}>
+                          <Utility vPadding={16}>
+                            <Typography variant="body-2">
+                              Yes! All VPDS components are built with accessibility in mind and meet WCAG 2.1 AA standards.
+                            </Typography>
+                          </Utility>
+                        </AccordionPanel>
+                      </Utility>
+                    </Accordion>
                   </Utility>
-                </TabPanel>
-              </TabPanels>
-            </Tabs>
+                )}
+              </Utility>
+            </Utility>
           </Utility>
         </Utility>
 
@@ -419,155 +360,140 @@ export default function Home() {
         <Utility id="forms" vPaddingVertical={64} vPaddingHorizontal={24}>
           <Utility vFlex vFlexCol vGap={48} className="v-max-w-7xl v-mx-auto">
             <Utility vFlex vFlexCol vAlignItems="center" vGap={16} className="v-text-center">
-              <Typography variant="headline-2" tag="h2" data-testid="text-forms-title">
-                Form Elements
+              <Typography variant="headline-2" tag="h2">
+                Form Components
               </Typography>
-              <Typography variant="body-1" className="v-text-subtle v-max-w-2xl">
-                Build accessible forms with our comprehensive form component library.
+              <Typography variant="body-1" className="v-text-subtle">
+                Accessible form elements for any use case
               </Typography>
             </Utility>
 
             <Utility vFlex vFlexWrap vGap={48} vJustifyContent="center">
-              <ContentCard className="v-w-96" data-testid="card-form-inputs">
-                <ContentCardBody>
-                  <Utility vFlex vFlexCol vGap={20}>
-                    <ContentCardTitle variant="headline-4">Contact Form</ContentCardTitle>
-                    
-                    <Utility vFlex vFlexCol vGap={4}>
-                      <Label htmlFor="name">Full Name</Label>
-                      <Input id="name" placeholder="Enter your name" data-testid="input-name" />
-                    </Utility>
+              <Utility vFlex vFlexCol vGap={24} className="v-w-80">
+                <Typography variant="headline-4">Text Inputs</Typography>
+                <Utility vFlex vFlexCol vGap={4}>
+                  <Label htmlFor="name-input">Full Name</Label>
+                  <Input id="name-input" placeholder="Enter your name" data-testid="input-name" />
+                </Utility>
+                <Utility vFlex vFlexCol vGap={4}>
+                  <Label htmlFor="email-input">Email Address</Label>
+                  <Input id="email-input" type="email" placeholder="you@example.com" data-testid="input-email" />
+                </Utility>
+              </Utility>
 
-                    <Utility vFlex vFlexCol vGap={4}>
-                      <Label htmlFor="email">Email Address</Label>
-                      <Input id="email" type="email" placeholder="you@example.com" data-testid="input-email" />
-                    </Utility>
-
-                    <Utility vFlex vFlexCol vGap={4}>
-                      <Label htmlFor="subject">Subject</Label>
-                      <Select id="subject" data-testid="select-subject">
-                        <option value="">Select a subject</option>
-                        <option value="support">Support Request</option>
-                        <option value="sales">Sales Inquiry</option>
-                        <option value="feedback">Feedback</option>
-                      </Select>
-                    </Utility>
-
-                    <Utility vFlex vFlexCol vGap={8}>
-                      <Checkbox id="newsletter" data-testid="checkbox-newsletter">
-                        Subscribe to newsletter
-                      </Checkbox>
-                      <Checkbox id="terms" data-testid="checkbox-terms">
-                        I agree to the terms and conditions
-                      </Checkbox>
-                    </Utility>
-
-                    <Button className="v-w-full" data-testid="button-submit-form">
-                      Submit
-                    </Button>
+              <Utility vFlex vFlexCol vGap={24} className="v-w-80">
+                <Typography variant="headline-4">Selection Controls</Typography>
+                <Utility vFlex vFlexCol vGap={4}>
+                  <Label htmlFor="country-select">Country</Label>
+                  <Select id="country-select" data-testid="select-country">
+                    <option value="">Select a country</option>
+                    <option value="us">United States</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="ca">Canada</option>
+                    <option value="au">Australia</option>
+                  </Select>
+                </Utility>
+                <Utility vFlex vFlexCol vGap={8}>
+                  <Utility vFlex vGap={8} vAlignItems="center">
+                    <Checkbox id="checkbox-terms" data-testid="checkbox-terms" />
+                    <Label htmlFor="checkbox-terms">I agree to the terms and conditions</Label>
                   </Utility>
-                </ContentCardBody>
-              </ContentCard>
-
-              <ContentCard className="v-w-96" data-testid="card-form-radios">
-                <ContentCardBody>
-                  <Utility vFlex vFlexCol vGap={20}>
-                    <ContentCardTitle variant="headline-4">Preferences</ContentCardTitle>
-                    
-                    <Utility vFlex vFlexCol vGap={8}>
-                      <Typography variant="label-1">Notification Frequency</Typography>
-                      <Radio name="frequency" value="realtime" data-testid="radio-realtime">
-                        Real-time
-                      </Radio>
-                      <Radio name="frequency" value="daily" data-testid="radio-daily">
-                        Daily digest
-                      </Radio>
-                      <Radio name="frequency" value="weekly" data-testid="radio-weekly">
-                        Weekly summary
-                      </Radio>
-                      <Radio name="frequency" value="none" data-testid="radio-none">
-                        No notifications
-                      </Radio>
-                    </Utility>
-
-                    <Divider />
-
-                    <Utility vFlex vFlexCol vGap={8}>
-                      <Typography variant="label-1">Theme Preference</Typography>
-                      <Radio name="theme" value="light" data-testid="radio-light">
-                        Light mode
-                      </Radio>
-                      <Radio name="theme" value="dark" data-testid="radio-dark">
-                        Dark mode
-                      </Radio>
-                      <Radio name="theme" value="system" data-testid="radio-system">
-                        System default
-                      </Radio>
-                    </Utility>
-
-                    <Button variant="secondary" className="v-w-full" data-testid="button-save-preferences">
-                      Save Preferences
-                    </Button>
+                  <Utility vFlex vGap={8} vAlignItems="center">
+                    <Checkbox id="checkbox-newsletter" data-testid="checkbox-newsletter" />
+                    <Label htmlFor="checkbox-newsletter">Subscribe to newsletter</Label>
                   </Utility>
-                </ContentCardBody>
-              </ContentCard>
+                </Utility>
+              </Utility>
+
+              <Utility vFlex vFlexCol vGap={24} className="v-w-80">
+                <Typography variant="headline-4">Radio Buttons</Typography>
+                <Utility vFlex vFlexCol vGap={8}>
+                  <Utility vFlex vGap={8} vAlignItems="center">
+                    <Radio name="payment" value="card" id="radio-card" data-testid="radio-card" />
+                    <Label htmlFor="radio-card">Credit Card</Label>
+                  </Utility>
+                  <Utility vFlex vGap={8} vAlignItems="center">
+                    <Radio name="payment" value="bank" id="radio-bank" data-testid="radio-bank" />
+                    <Label htmlFor="radio-bank">Bank Transfer</Label>
+                  </Utility>
+                  <Utility vFlex vGap={8} vAlignItems="center">
+                    <Radio name="payment" value="paypal" id="radio-paypal" data-testid="radio-paypal" />
+                    <Label htmlFor="radio-paypal">Digital Wallet</Label>
+                  </Utility>
+                </Utility>
+              </Utility>
             </Utility>
           </Utility>
         </Utility>
 
-        <Utility className="v-bg-surface-2" vPaddingVertical={64} vPaddingHorizontal={24}>
-          <Utility vFlex vFlexCol vAlignItems="center" vGap={24} className="v-max-w-2xl v-mx-auto v-text-center">
-            <Typography variant="headline-2" tag="h2" data-testid="text-cta-title">
-              Ready to Get Started?
-            </Typography>
-            <Typography variant="body-1" className="v-text-subtle">
-              Join thousands of developers building beautiful, accessible experiences with the Visa Product Design System.
-            </Typography>
-            <Utility vFlex vGap={16} vFlexWrap vJustifyContent="center">
-              <Button size="large" data-testid="button-start-building">
-                Start Building
-                <GenericArrowRightTiny />
-              </Button>
-              <Button variant="tertiary" size="large" data-testid="button-view-docs">
-                <GenericInformationLow />
-                View Documentation
-              </Button>
+        <Divider />
+
+        <Utility vPaddingVertical={64} vPaddingHorizontal={24} className="v-bg-surface-2">
+          <Utility vFlex vFlexCol vGap={32} className="v-max-w-7xl v-mx-auto">
+            <Utility vFlex vFlexCol vAlignItems="center" vGap={16} className="v-text-center">
+              <Typography variant="headline-2" tag="h2">
+                More Components
+              </Typography>
+            </Utility>
+
+            <Utility vFlex vFlexWrap vGap={32} vJustifyContent="center">
+              <Utility vFlex vFlexCol vGap={16} vAlignItems="center" className="v-w-64">
+                <Typography variant="headline-4">Avatar</Typography>
+                <Utility vFlex vGap={12}>
+                  <Avatar data-testid="avatar-1">AB</Avatar>
+                  <Avatar data-testid="avatar-2">CD</Avatar>
+                  <Avatar data-testid="avatar-3">EF</Avatar>
+                </Utility>
+              </Utility>
+
+              <Utility vFlex vFlexCol vGap={16} vAlignItems="center" className="v-w-64">
+                <Typography variant="headline-4">Divider</Typography>
+                <Utility vFlex vFlexCol vGap={8} className="v-w-full">
+                  <Typography variant="body-2">Content above</Typography>
+                  <Divider />
+                  <Typography variant="body-2">Content below</Typography>
+                </Utility>
+              </Utility>
+
+              <Utility vFlex vFlexCol vGap={16} vAlignItems="center" className="v-w-64">
+                <Typography variant="headline-4">Typography</Typography>
+                <Utility vFlex vFlexCol vGap={4} vAlignItems="start">
+                  <Typography variant="headline-2">Headline 2</Typography>
+                  <Typography variant="headline-4">Headline 4</Typography>
+                  <Typography variant="body-1">Body 1 text</Typography>
+                  <Typography variant="body-2" className="v-text-subtle">Body 2 subtle</Typography>
+                </Utility>
+              </Utility>
             </Utility>
           </Utility>
         </Utility>
       </Utility>
 
-      <Utility tag="footer" className="v-bg-surface-1 v-border-t v-border-default" vPaddingVertical={48} vPaddingHorizontal={24}>
+      <Utility tag="footer" className="v-bg-surface-3 v-border-t v-border-default" vPaddingVertical={48} vPaddingHorizontal={24}>
         <Utility vFlex vFlexCol vGap={32} className="v-max-w-7xl v-mx-auto">
           <Utility vFlex vFlexWrap vJustifyContent="between" vGap={32}>
             <Utility vFlex vFlexCol vGap={16}>
               <Utility vFlex vAlignItems="center" vGap={8}>
-                <VisaMaxLow />
-                <Typography variant="headline-5">VPDS Showcase</Typography>
+                <VisaLogo />
+                <Typography variant="headline-4">VPDS</Typography>
               </Utility>
               <Typography variant="body-2" className="v-text-subtle v-max-w-xs">
-                Built with the Visa Product Design System to demonstrate its comprehensive component library.
+                The Visa Product Design System for building world-class payment experiences.
               </Typography>
             </Utility>
 
-            <Utility vFlex vGap={48} vFlexWrap>
+            <Utility vFlex vGap={48}>
               <Utility vFlex vFlexCol vGap={12}>
                 <Typography variant="label-1">Resources</Typography>
-                <Link href="#" className="v-text-subtle" data-testid="link-documentation">Documentation</Link>
-                <Link href="#" className="v-text-subtle" data-testid="link-components-footer">Components</Link>
-                <Link href="#" className="v-text-subtle" data-testid="link-design-tokens">Design Tokens</Link>
+                <Link href="#" data-testid="link-documentation">Documentation</Link>
+                <Link href="#" data-testid="link-github">GitHub</Link>
+                <Link href="#" data-testid="link-storybook">Storybook</Link>
               </Utility>
               <Utility vFlex vFlexCol vGap={12}>
                 <Typography variant="label-1">Community</Typography>
-                <Link href="#" className="v-text-subtle" data-testid="link-github">GitHub</Link>
-                <Link href="#" className="v-text-subtle" data-testid="link-support">Support</Link>
-                <Link href="#" className="v-text-subtle" data-testid="link-contributing">Contributing</Link>
-              </Utility>
-              <Utility vFlex vFlexCol vGap={12}>
-                <Typography variant="label-1">Legal</Typography>
-                <Link href="#" className="v-text-subtle" data-testid="link-privacy">Privacy Policy</Link>
-                <Link href="#" className="v-text-subtle" data-testid="link-terms">Terms of Service</Link>
-                <Link href="#" className="v-text-subtle" data-testid="link-license">License</Link>
+                <Link href="#" data-testid="link-support">Support</Link>
+                <Link href="#" data-testid="link-blog">Blog</Link>
+                <Link href="#" data-testid="link-contact">Contact</Link>
               </Utility>
             </Utility>
           </Utility>
@@ -575,12 +501,13 @@ export default function Home() {
           <Divider />
 
           <Utility vFlex vJustifyContent="between" vAlignItems="center" vFlexWrap vGap={16}>
-            <Typography variant="body-2" className="v-text-subtle" data-testid="text-copyright">
-              Built with Visa Product Design System. All components are from @visa/nova-react.
+            <Typography variant="body-2" className="v-text-subtle">
+              2025 Visa. All rights reserved.
             </Typography>
-            <Utility vFlex vGap={8}>
-              <Badge colorScheme="info">React 18+</Badge>
-              <Badge colorScheme="positive">WCAG 2.2 AA</Badge>
+            <Utility vFlex vGap={16}>
+              <Link href="#" data-testid="link-privacy">Privacy</Link>
+              <Link href="#" data-testid="link-terms">Terms</Link>
+              <Link href="#" data-testid="link-cookies">Cookies</Link>
             </Utility>
           </Utility>
         </Utility>
