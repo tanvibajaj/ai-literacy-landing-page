@@ -7,7 +7,7 @@ import {
 
 export default function AgentWorking() {
   return (
-    <Utility vFlex vFlexCol vAlignItems="center" vJustifyContent="center" className="v-min-h-screen v-bg-surface-1">
+    <Utility vFlex vFlexCol vAlignItems="center" vJustifyContent="center" className="v-h-screen v-bg-surface-1">
       <Utility vFlex vFlexCol vAlignItems="center" vGap={32}>
         <VisaLogo />
         <ProgressCircular data-testid="spinner-agent" />
