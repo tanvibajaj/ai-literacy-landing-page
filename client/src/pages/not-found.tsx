@@ -1,21 +1,33 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle } from "lucide-react";
+import {
+  Typography,
+  Utility,
+  ContentCard,
+  ContentCardBody,
+  Button,
+} from '@visa/nova-react';
+import { GenericWarningLow } from '@visa/nova-icons-react';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
-      <Card className="w-full max-w-md mx-4">
-        <CardContent className="pt-6">
-          <div className="flex mb-4 gap-2">
-            <AlertCircle className="h-8 w-8 text-red-500" />
-            <h1 className="text-2xl font-bold text-gray-900">404 Page Not Found</h1>
-          </div>
-
-          <p className="mt-4 text-sm text-gray-600">
-            Did you forget to add the page to the router?
-          </p>
-        </CardContent>
-      </Card>
-    </div>
+    <Utility vFlex vAlignItems="center" vJustifyContent="center" className="v-min-h-screen v-bg-surface-1" vPadding={16}>
+      <ContentCard className="v-max-w-md" data-testid="card-not-found">
+        <ContentCardBody>
+          <Utility vFlex vFlexCol vGap={16}>
+            <Utility vFlex vAlignItems="center" vGap={12}>
+              <GenericWarningLow className="v-text-warning" />
+              <Typography variant="headline-3" tag="h1" data-testid="text-404-title">
+                404 Page Not Found
+              </Typography>
+            </Utility>
+            <Typography variant="body-1" className="v-text-subtle" data-testid="text-404-message">
+              The page you're looking for doesn't exist or has been moved.
+            </Typography>
+            <Button onClick={() => window.location.href = '/'} data-testid="button-go-home">
+              Go Home
+            </Button>
+          </Utility>
+        </ContentCardBody>
+      </ContentCard>
+    </Utility>
   );
 }
