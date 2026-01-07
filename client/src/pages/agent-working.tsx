@@ -17,7 +17,7 @@ export default function AgentWorking() {
     }}>
       <Utility vFlex vFlexCol vAlignItems="center" vGap={32}>
         <VisaLogo />
-        <ProgressCircular data-testid="spinner-agent" />
+        <ProgressCircular indeterminate data-testid="spinner-agent" />
         <Typography variant="headline-3" tag="h1" data-testid="text-agent-working">
           Agent is working...
         </Typography>
