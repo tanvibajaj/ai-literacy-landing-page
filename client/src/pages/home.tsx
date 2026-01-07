@@ -37,8 +37,6 @@ import {
   GenericFavoriteStarFillTiny,
 } from '@visa/nova-icons-react';
 import { useState } from 'react';
-import { Progress } from '@/components/ui/progress';
-import { Switch } from '@/components/ui/switch';
 
 export default function Home() {
   const [toggleChecked, setToggleChecked] = useState(false);
@@ -274,17 +272,28 @@ export default function Home() {
                     </Utility>
                     <Typography variant="headline-4">Progress</Typography>
                     <Utility vFlex vFlexCol vGap={12} className="v-w-full v-max-w-md">
-                      <Progress value={25} data-testid="progress-25" />
-                      <Progress value={50} data-testid="progress-50" />
-                      <Progress value={75} data-testid="progress-75" />
+                      <div className="progress-bar" data-testid="progress-25">
+                        <div className="progress-bar-fill" style={{ width: '25%' }} />
+                      </div>
+                      <div className="progress-bar" data-testid="progress-50">
+                        <div className="progress-bar-fill" style={{ width: '50%' }} />
+                      </div>
+                      <div className="progress-bar" data-testid="progress-75">
+                        <div className="progress-bar-fill" style={{ width: '75%' }} />
+                      </div>
                     </Utility>
                     <Typography variant="headline-4">Toggle</Typography>
                     <Utility vFlex vAlignItems="center" vGap={12}>
-                      <Switch 
-                        checked={toggleChecked} 
-                        onCheckedChange={setToggleChecked}
+                      <button 
+                        type="button"
+                        role="switch"
+                        aria-checked={toggleChecked}
+                        onClick={() => setToggleChecked(!toggleChecked)}
+                        className={`toggle-switch ${toggleChecked ? 'toggle-switch-checked' : ''}`}
                         data-testid="toggle-switch"
-                      />
+                      >
+                        <span className="toggle-switch-thumb" />
+                      </button>
                       <Typography variant="body-2">
                         {toggleChecked ? 'Enabled' : 'Disabled'}
                       </Typography>

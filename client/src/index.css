@@ -1,9 +1,59 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Body reset */
 body {
   margin: 0;
   padding: 0;
+}
+
+/* Progress Bar - Pure CSS replacement for shadcn Progress */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--v-color-surface-3, #e5e7eb);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--v-color-active, #1a1f71);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Toggle Switch - Pure CSS replacement for shadcn Switch */
+.toggle-switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background-color: var(--v-color-surface-3, #d1d5db);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  padding: 0;
+}
+
+.toggle-switch:focus-visible {
+  outline: 2px solid var(--v-color-active, #1a1f71);
+  outline-offset: 2px;
+}
+
+.toggle-switch-checked {
+  background-color: var(--v-color-active, #1a1f71);
+}
+
+.toggle-switch-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch-checked .toggle-switch-thumb {
+  transform: translateX(20px);
 }
