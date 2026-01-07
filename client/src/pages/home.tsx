@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <Utility vFlex vFlexCol className="v-min-h-screen v-bg-surface-1">
       <Nav tag="header" className="v-bg-surface-2 v-border-b v-border-default">
-        <Utility vFlex vAlignItems="center" vJustifyContent="between" vPaddingHorizontal={24} vPaddingVertical={16} className="v-w-full v-max-w-7xl v-mx-auto">
+        <Utility vFlex vAlignItems="center" vJustifyContent="between" vGap={24} vPaddingHorizontal={24} vPaddingVertical={16} className="v-w-full v-max-w-7xl v-mx-auto">
           <Utility vFlex vAlignItems="center" vGap={12}>
             <VisaLogo />
             <Typography variant="headline-4" tag="span">VPDS Showcase</Typography>
