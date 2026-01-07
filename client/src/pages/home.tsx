@@ -59,7 +59,7 @@ export default function Home() {
             <Link href="#features" data-testid="link-features">Features</Link>
           </Utility>
           <Utility vFlex vGap={8}>
-            <Button variant="tertiary" data-testid="button-signin">
+            <Button colorScheme="tertiary" data-testid="button-signin">
               <GenericAccountLow />
               Sign In
             </Button>
@@ -68,10 +68,10 @@ export default function Home() {
         </Utility>
       </Nav>
 
-      <Utility tag="main" vFlex vFlexCol vFlexGrow={1}>
-        <Utility className="v-bg-surface-2" vPaddingVertical={80}>
+      <Utility tag="main" vFlex vFlexCol vFlexGrow>
+        <Utility className="v-bg-surface-2" vPaddingVertical={48}>
           <Utility vFlex vFlexCol vAlignItems="center" vGap={24} className="v-max-w-4xl v-mx-auto v-text-center" vPaddingHorizontal={24}>
-            <Badge colorScheme="info">
+            <Badge badgeType="stable">
               <GenericFastTiny />
               Powered by Visa Design System
             </Badge>
@@ -83,18 +83,18 @@ export default function Home() {
               to help you create world-class payment experiences faster.
             </Typography>
             <Utility vFlex vGap={16} vFlexWrap>
-              <Button size="large" data-testid="button-explore">
+              <Button buttonSize="large" data-testid="button-explore">
                 Explore Components
                 <GenericArrowRightTiny />
               </Button>
-              <Button variant="secondary" size="large" data-testid="button-documentation">
+              <Button colorScheme="secondary" buttonSize="large" data-testid="button-documentation">
                 View Documentation
               </Button>
             </Utility>
           </Utility>
         </Utility>
 
-        <Utility id="features" vPaddingVertical={64} vPaddingHorizontal={24}>
+        <Utility id="features" vPaddingVertical={48} vPaddingHorizontal={24}>
           <Utility vFlex vFlexCol vGap={48} className="v-max-w-7xl v-mx-auto">
             <Utility vFlex vFlexCol vAlignItems="center" vGap={16} className="v-text-center">
               <Typography variant="headline-2" tag="h2" data-testid="text-features-title">
@@ -141,7 +141,7 @@ export default function Home() {
 
         <Divider />
 
-        <Utility id="components" vPaddingVertical={64} vPaddingHorizontal={24} className="v-bg-surface-2">
+        <Utility id="components" vPaddingVertical={48} vPaddingHorizontal={24} className="v-bg-surface-2">
           <Utility vFlex vFlexCol vGap={48} className="v-max-w-7xl v-mx-auto">
             <Utility vFlex vFlexCol vAlignItems="center" vGap={16} className="v-text-center">
               <Typography variant="headline-2" tag="h2">
@@ -155,7 +155,7 @@ export default function Home() {
             <Utility vFlex vFlexCol vGap={16}>
               <Utility vFlex vGap={8} role="tablist" aria-label="Component categories">
                 <Button 
-                  variant={selectedTab === 0 ? "secondary" : "tertiary"} 
+                  colorScheme={selectedTab === 0 ? "secondary" : "tertiary"} 
                   onClick={() => setSelectedTab(0)} 
                   data-testid="tab-buttons"
                   role="tab"
@@ -166,7 +166,7 @@ export default function Home() {
                   Buttons
                 </Button>
                 <Button 
-                  variant={selectedTab === 1 ? "secondary" : "tertiary"} 
+                  colorScheme={selectedTab === 1 ? "secondary" : "tertiary"} 
                   onClick={() => setSelectedTab(1)} 
                   data-testid="tab-cards"
                   role="tab"
@@ -177,7 +177,7 @@ export default function Home() {
                   Cards
                 </Button>
                 <Button 
-                  variant={selectedTab === 2 ? "secondary" : "tertiary"} 
+                  colorScheme={selectedTab === 2 ? "secondary" : "tertiary"} 
                   onClick={() => setSelectedTab(2)} 
                   data-testid="tab-feedback"
                   role="tab"
@@ -188,7 +188,7 @@ export default function Home() {
                   Feedback
                 </Button>
                 <Button 
-                  variant={selectedTab === 3 ? "secondary" : "tertiary"} 
+                  colorScheme={selectedTab === 3 ? "secondary" : "tertiary"} 
                   onClick={() => setSelectedTab(3)} 
                   data-testid="tab-navigation"
                   role="tab"
@@ -206,15 +206,15 @@ export default function Home() {
                     <Typography variant="headline-4">Button Variants</Typography>
                     <Utility vFlex vGap={12} vFlexWrap>
                       <Button data-testid="button-primary">Primary</Button>
-                      <Button variant="secondary" data-testid="button-secondary">Secondary</Button>
-                      <Button variant="tertiary" data-testid="button-tertiary">Tertiary</Button>
-                      <Button variant="subtle" data-testid="button-subtle">Subtle</Button>
+                      <Button colorScheme="secondary" data-testid="button-secondary">Secondary</Button>
+                      <Button colorScheme="tertiary" data-testid="button-tertiary">Tertiary</Button>
+                      <Button subtle data-testid="button-subtle">Subtle</Button>
                     </Utility>
                     <Typography variant="headline-4">Button Sizes</Typography>
                     <Utility vFlex vGap={12} vFlexWrap vAlignItems="center">
-                      <Button size="small" data-testid="button-small">Small</Button>
-                      <Button size="medium" data-testid="button-medium">Medium</Button>
-                      <Button size="large" data-testid="button-large">Large</Button>
+                      <Button buttonSize="small" data-testid="button-small">Small</Button>
+                      <Button data-testid="button-medium">Medium</Button>
+                      <Button buttonSize="large" data-testid="button-large">Large</Button>
                     </Utility>
                     <Typography variant="headline-4">With Icons</Typography>
                     <Utility vFlex vGap={12} vFlexWrap>
@@ -222,7 +222,7 @@ export default function Home() {
                         <GenericLikeTiny />
                         Like
                       </Button>
-                      <Button variant="secondary" data-testid="button-icon-right">
+                      <Button colorScheme="secondary" data-testid="button-icon-right">
                         Next
                         <GenericArrowRightTiny />
                       </Button>
@@ -246,7 +246,7 @@ export default function Home() {
                             <GenericFavoriteStarFillTiny className="v-text-warning" />
                             <ContentCardTitle>Featured Card</ContentCardTitle>
                             <ContentCardSubtitle>Cards can include icons and other elements</ContentCardSubtitle>
-                            <Button size="small">Learn More</Button>
+                            <Button buttonSize="small">Learn More</Button>
                           </Utility>
                         </ContentCardBody>
                       </ContentCard>
@@ -258,16 +258,16 @@ export default function Home() {
                   <Utility vFlex vFlexCol vGap={24}>
                     <Typography variant="headline-4">Badges</Typography>
                     <Utility vFlex vGap={12} vFlexWrap>
-                      <Badge colorScheme="info" data-testid="badge-info">
+                      <Badge badgeType="neutral" data-testid="badge-info">
                         <GenericInformationLow />
                         Info
                       </Badge>
-                      <Badge colorScheme="positive" data-testid="badge-success">
+                      <Badge badgeType="stable" data-testid="badge-success">
                         <GenericCheckmarkTiny />
                         Success
                       </Badge>
-                      <Badge colorScheme="warning" data-testid="badge-warning">Warning</Badge>
-                      <Badge colorScheme="negative" data-testid="badge-error">
+                      <Badge badgeType="warning" data-testid="badge-warning">Warning</Badge>
+                      <Badge badgeType="critical" data-testid="badge-error">
                         <GenericCloseTiny />
                         Error
                       </Badge>
@@ -303,13 +303,13 @@ export default function Home() {
                     <Accordion>
                       <Utility vFlex vFlexCol className="v-border v-border-default v-rounded-md">
                         <AccordionHeading 
-                          expanded={accordionOpen === 0}
+                          aria-expanded={accordionOpen === 0}
                           onClick={() => setAccordionOpen(accordionOpen === 0 ? null : 0)}
                           data-testid="accordion-heading-1"
                         >
                           What is VPDS?
                         </AccordionHeading>
-                        <AccordionPanel expanded={accordionOpen === 0}>
+                        <AccordionPanel aria-hidden={accordionOpen !== 0}>
                           <Utility vPadding={16}>
                             <Typography variant="body-2">
                               VPDS is the Visa Product Design System, a comprehensive design system for building payment experiences.
@@ -318,13 +318,13 @@ export default function Home() {
                         </AccordionPanel>
                         <Divider />
                         <AccordionHeading 
-                          expanded={accordionOpen === 1}
+                          aria-expanded={accordionOpen === 1}
                           onClick={() => setAccordionOpen(accordionOpen === 1 ? null : 1)}
                           data-testid="accordion-heading-2"
                         >
                           How do I get started?
                         </AccordionHeading>
-                        <AccordionPanel expanded={accordionOpen === 1}>
+                        <AccordionPanel aria-hidden={accordionOpen !== 1}>
                           <Utility vPadding={16}>
                             <Typography variant="body-2">
                               Install the packages from npm and import the components you need.
@@ -333,13 +333,13 @@ export default function Home() {
                         </AccordionPanel>
                         <Divider />
                         <AccordionHeading 
-                          expanded={accordionOpen === 2}
+                          aria-expanded={accordionOpen === 2}
                           onClick={() => setAccordionOpen(accordionOpen === 2 ? null : 2)}
                           data-testid="accordion-heading-3"
                         >
                           Is it accessible?
                         </AccordionHeading>
-                        <AccordionPanel expanded={accordionOpen === 2}>
+                        <AccordionPanel aria-hidden={accordionOpen !== 2}>
                           <Utility vPadding={16}>
                             <Typography variant="body-2">
                               Yes! All VPDS components are built with accessibility in mind and meet WCAG 2.1 AA standards.
@@ -357,7 +357,7 @@ export default function Home() {
 
         <Divider />
 
-        <Utility id="forms" vPaddingVertical={64} vPaddingHorizontal={24}>
+        <Utility id="forms" vPaddingVertical={48} vPaddingHorizontal={24}>
           <Utility vFlex vFlexCol vGap={48} className="v-max-w-7xl v-mx-auto">
             <Utility vFlex vFlexCol vAlignItems="center" vGap={16} className="v-text-center">
               <Typography variant="headline-2" tag="h2">
@@ -428,7 +428,7 @@ export default function Home() {
 
         <Divider />
 
-        <Utility vPaddingVertical={64} vPaddingHorizontal={24} className="v-bg-surface-2">
+        <Utility vPaddingVertical={48} vPaddingHorizontal={24} className="v-bg-surface-2">
           <Utility vFlex vFlexCol vGap={32} className="v-max-w-7xl v-mx-auto">
             <Utility vFlex vFlexCol vAlignItems="center" vGap={16} className="v-text-center">
               <Typography variant="headline-2" tag="h2">
@@ -484,13 +484,13 @@ export default function Home() {
 
             <Utility vFlex vGap={48}>
               <Utility vFlex vFlexCol vGap={12}>
-                <Typography variant="label-1">Resources</Typography>
+                <Typography variant="label">Resources</Typography>
                 <Link href="#" data-testid="link-documentation">Documentation</Link>
                 <Link href="#" data-testid="link-github">GitHub</Link>
                 <Link href="#" data-testid="link-storybook">Storybook</Link>
               </Utility>
               <Utility vFlex vFlexCol vGap={12}>
-                <Typography variant="label-1">Community</Typography>
+                <Typography variant="label">Community</Typography>
                 <Link href="#" data-testid="link-support">Support</Link>
                 <Link href="#" data-testid="link-blog">Blog</Link>
                 <Link href="#" data-testid="link-contact">Contact</Link>
@@ -500,11 +500,11 @@ export default function Home() {
 
           <Divider />
 
-          <Utility vFlex vJustifyContent="between" vAlignItems="center" vFlexWrap vGap={16}>
-            <Typography variant="body-2" className="v-text-subtle">
+          <Utility vFlex vFlexWrap vJustifyContent="between" vAlignItems="center" vGap={16}>
+            <Typography variant="body-3" className="v-text-subtle">
               2025 Visa. All rights reserved.
             </Typography>
-            <Utility vFlex vGap={16}>
+            <Utility vFlex vGap={24}>
               <Link href="#" data-testid="link-privacy">Privacy</Link>
               <Link href="#" data-testid="link-terms">Terms</Link>
               <Link href="#" data-testid="link-cookies">Cookies</Link>
