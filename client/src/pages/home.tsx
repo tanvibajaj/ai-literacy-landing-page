@@ -18,8 +18,6 @@ import {
   Accordion,
   AccordionHeading,
   AccordionPanel,
-  Progress,
-  Toggle,
   Avatar,
   VisaLogo,
 } from '@visa/nova-react';
@@ -39,6 +37,8 @@ import {
   GenericFavoriteStarFillTiny,
 } from '@visa/nova-icons-react';
 import { useState } from 'react';
+import { Progress } from '@/components/ui/progress';
+import { Switch } from '@/components/ui/switch';
 
 export default function Home() {
   const [toggleChecked, setToggleChecked] = useState(false);
@@ -280,9 +280,9 @@ export default function Home() {
                     </Utility>
                     <Typography variant="headline-4">Toggle</Typography>
                     <Utility vFlex vAlignItems="center" vGap={12}>
-                      <Toggle 
+                      <Switch 
                         checked={toggleChecked} 
-                        onChange={() => setToggleChecked(!toggleChecked)}
+                        onCheckedChange={setToggleChecked}
                         data-testid="toggle-switch"
                       />
                       <Typography variant="body-2">
