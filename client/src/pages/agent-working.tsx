@@ -7,7 +7,14 @@ import {
 
 export default function AgentWorking() {
   return (
-    <Utility vFlex vFlexCol vAlignItems="center" vJustifyContent="center" className="v-h-screen v-bg-surface-1">
+    <div style={{ 
+      display: 'flex', 
+      flexDirection: 'column', 
+      alignItems: 'center', 
+      justifyContent: 'center', 
+      minHeight: '100vh',
+      backgroundColor: 'var(--v-color-surface-1)'
+    }}>
       <Utility vFlex vFlexCol vAlignItems="center" vGap={32}>
         <VisaLogo />
         <ProgressCircular data-testid="spinner-agent" />
@@ -18,6 +25,6 @@ export default function AgentWorking() {
           Please wait while your request is being processed.
         </Typography>
       </Utility>
-    </Utility>
+    </div>
   );
 }
