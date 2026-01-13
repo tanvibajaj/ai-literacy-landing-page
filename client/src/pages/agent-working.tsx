@@ -18,9 +18,7 @@ export default function AgentWorking() {
       <Utility vFlex vFlexCol vAlignItems="center" vGap={32}>
         <VisaLogo />
         <ProgressCircular indeterminate data-testid="spinner-agent" />
-        <Typography variant="headline-3" tag="h1" data-testid="text-agent-working">
-          Agent is working...
-        </Typography>
+        <Typography variant="headline-3" tag="h1" data-testid="text-agent-working">Replit agent is working...</Typography>
         <Typography variant="body-1" className="v-text-subtle" data-testid="text-agent-subtitle">
           Please wait while your request is being processed.
         </Typography>
