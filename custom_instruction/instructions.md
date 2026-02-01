@@ -6,6 +6,12 @@
 3. Search `https://design.visa.com/developing/react/` as much as possible when using each component, before you use a given component research it at this url `https://design.visa.com/components/<component>/?code_library=react&version=3.0.0`
 4. When you are done working make sure to call the architect to ensure compliance
 5. Use the visa logo in the top left like so: import { VisaLogo } from '@visa/nova-react';
+6. For horizontal layouts use this pattern
+```tsx
+// Grid layout - use vGap, keep grid definition in style
+<Utility vGap={24} style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)" }}>
+```
+7. Blue as a background color should only be used in hero sections and inputs should never be placed on blue backgrounds.
 
 ## Your workflow (iterative)
 1. Determine which visa components will be used
@@ -70,7 +76,4 @@ style={{ padding: "24px", gap: "16px" }}
     {/* content */}
   </Utility>
 </Surface>
-
-// Grid layout - use vGap, keep grid definition in style
-<Utility vGap={24} style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)" }}>
 ```
