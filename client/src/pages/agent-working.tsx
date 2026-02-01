@@ -4,7 +4,7 @@ import {
   ProgressCircular,
   VisaLogo,
 } from '@visa/nova-react';
-import replitLogo from '@assets/replit-color_1768270703378.png';
+import replitLogo from '@assets/replit-color_1769969265462.png';
 
 export default function AgentWorking() {
   return (
