@@ -4,6 +4,7 @@
 1. Use the Visa Nova design system for all components and styles refrain from custom html and css at all costs
 2. MAKE ABSOLUTELY SURE YOU RESEARCH COMPONENTS (i.e. the props, and api) before use: `@visa/nova-react/<component>`
 3. Search `https://design.visa.com/developing/react/` as much as possible when using each component, before you use a given component research it at this url `https://design.visa.com/components/<component>/?code_library=react&version=3.0.0`
+4. When you are done working make sure to call the architect to ensure compliance
 
 ## Your workflow (iterative)
 1. Determine which visa components will be used
