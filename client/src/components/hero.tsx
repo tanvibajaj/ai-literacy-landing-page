@@ -63,9 +63,18 @@ export function Hero() {
             {eventConfig.hero.headline}
           </Typography>
 
-          <Typography variant="body-2" data-testid="text-hero-sponsor">
-            {eventConfig.brand.sponsorLine}
-          </Typography>
+          <Utility vFlex vAlignItems="center" vGap={8} data-testid="text-hero-deadline">
+            <Typography
+              variant="body-2-bold"
+              tag="span"
+              style={{ color: "#fcc015" }}
+            >
+              Apply by {eventConfig.meta.deadlineShort}
+            </Typography>
+            <Typography variant="body-2" tag="span" colorScheme="subtle">
+              — applications close two weeks before the event.
+            </Typography>
+          </Utility>
 
           <Utility vFlex vFlexWrap vGap={8} vMarginTop={4}>
             {eventConfig.badges.map((b) => (
