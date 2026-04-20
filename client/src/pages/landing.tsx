@@ -283,7 +283,7 @@ export default function Landing() {
           id="apply"
           eyebrow="Apply"
           title="Apply to attend"
-          intro="A short form — under a minute. We'll review and confirm by email with the exact address."
+          intro={`A short form — under a minute. We'll review and confirm by email with the exact address. ${eventConfig.meta.deadlineNote}`}
         >
           <Surface
             style={{

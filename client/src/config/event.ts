@@ -20,6 +20,10 @@ export const eventConfig = {
     timeShort: "5–7 PM",
     locationShort: "Visa office, San Francisco",
     locationLong: "Visa office, San Francisco — exact address shared upon confirmation",
+    deadlineLong: "Wednesday, May 6, 2026 (11:59 PM PT)",
+    deadlineShort: "May 6",
+    deadlineNote:
+      "Applications close on May 6, 2026 — two weeks before the event — so we have time to review and confirm.",
   },
   badges: [
     "Beginner-friendly",
@@ -125,6 +129,11 @@ export const eventConfig = {
         "A charged laptop and, ideally, a real project you'd like to iterate on with the Crypto Labs team.",
     },
     {
+      label: "Application deadline",
+      value:
+        "Wednesday, May 6, 2026 at 11:59 PM PT — two weeks before the event. Late applications won't be reviewed.",
+    },
+    {
       label: "Capacity",
       value: "Limited seats. Confirmation will be sent by email after we review your application.",
     },
@@ -152,8 +161,12 @@ export const eventConfig = {
       a: "A charged laptop you can use freely for two hours, and ideally a real project you're working on — a side project, a workflow at your business, a class assignment, or just an idea. The Crypto Labs team will sit with you and iterate on it live.",
     },
     {
+      q: "When is the application deadline?",
+      a: "Wednesday, May 6, 2026 at 11:59 PM PT — exactly two weeks before the event. We need that time to review applications and send confirmations. Late applications won't be reviewed.",
+    },
+    {
       q: "How does acceptance work?",
-      a: "Apply using the form below. Seats are limited, so we review applications as they come in and send confirmations by email with the exact address.",
+      a: "Apply using the form below before May 6. We review applications as they come in and send confirmations by email with the exact address.",
     },
     {
       q: "Will there be recordings?",

@@ -14,6 +14,7 @@ import {
 } from "@visa/nova-react";
 import CheckmarkTiny from "@visa/nova-icons-react/generic/checkmark-tiny";
 import { eventConfig } from "@/config/event";
+import { useEventStatus } from "@/hooks/use-event-status";
 
 type FormState = {
   name: string;
@@ -39,6 +40,26 @@ export function ApplyForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
     "idle"
   );
+  const eventStatus = useEventStatus();
+
+  if (eventStatus?.closed) {
+    return (
+      <SectionMessage messageType="warning" data-testid="message-apply-closed">
+        <SectionMessageContent>
+          <Typography variant="subtitle-1" tag="h3">
+            Applications are closed
+          </Typography>
+          <Typography variant="body-2" colorScheme="subtle">
+            We stopped accepting applications on{" "}
+            {eventConfig.meta.deadlineLong} so the team has time to review
+            submissions and confirm attendees ahead of {eventConfig.meta.dateLong}.
+            If you applied and haven't heard back, please check your email
+            (including spam).
+          </Typography>
+        </SectionMessageContent>
+      </SectionMessage>
+    );
+  }
 
   const update = <K extends keyof FormState>(key: K, value: FormState[K]) => {
     setForm((prev) => ({ ...prev, [key]: value }));
