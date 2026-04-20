@@ -4,7 +4,7 @@ export const eventConfig = {
     sponsorLine: "Sponsored by the Crypto Labs team at Visa",
   },
   hero: {
-    title: "AI Literacy with Visa in SF",
+    title: "AI Literacy with Visa in San Francisco",
     subtitle: "Learn to Build with AI",
     headline: "An evening of practical AI literacy — built around making, not lecturing.",
     sub:
