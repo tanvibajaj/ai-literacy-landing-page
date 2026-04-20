@@ -40,10 +40,15 @@ export function Hero() {
               {eventConfig.hero.title}
             </Typography>
             <Typography
-              variant="display-4"
+              variant="display-2"
               tag="p"
               data-testid="text-hero-subtitle"
-              style={{ color: "var(--palette-default-active)" }}
+              style={{
+                color: "#fcc015",
+                whiteSpace: "nowrap",
+                fontSize: "clamp(1.75rem, 4vw, 2.75rem)",
+                lineHeight: 1.1,
+              }}
             >
               {eventConfig.hero.subtitle}
             </Typography>
