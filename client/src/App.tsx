@@ -1,13 +1,13 @@
 import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
-import AgentWorking from "@/pages/agent-working";
+import Landing from "@/pages/landing";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={AgentWorking} />
+      <Route path="/" component={Landing} />
       <Route component={NotFound} />
     </Switch>
   );
