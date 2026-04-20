@@ -1,8 +1,6 @@
 import {
   Badge,
   Divider,
-  SectionMessage,
-  SectionMessageContent,
   Surface,
   Typography,
   Utility,
@@ -66,14 +64,6 @@ export default function Landing() {
               </Surface>
             ))}
           </Utility>
-
-          <SectionMessage messageType="subtle" data-testid="callout-why-laptop">
-            <SectionMessageContent>
-              <Typography variant="body-2-medium">
-                {eventConfig.why.laptopReinforce}
-              </Typography>
-            </SectionMessageContent>
-          </SectionMessage>
         </Section>
 
         {/* Agenda */}
@@ -138,14 +128,6 @@ export default function Landing() {
               </Surface>
             ))}
           </Utility>
-
-          <SectionMessage messageType="warning" data-testid="callout-agenda-laptop">
-            <SectionMessageContent>
-              <Typography variant="body-2-medium">
-                {eventConfig.agendaNote}
-              </Typography>
-            </SectionMessageContent>
-          </SectionMessage>
         </Section>
 
         {/* What you'll learn */}
@@ -242,14 +224,6 @@ export default function Landing() {
               </Utility>
             ))}
           </Utility>
-
-          <SectionMessage messageType="subtle" data-testid="callout-audience-laptop">
-            <SectionMessageContent>
-              <Typography variant="body-2-medium">
-                {eventConfig.audience.laptopNote}
-              </Typography>
-            </SectionMessageContent>
-          </SectionMessage>
         </Section>
 
         {/* Logistics */}
@@ -292,14 +266,6 @@ export default function Landing() {
               </Utility>
             ))}
           </Utility>
-
-          <SectionMessage messageType="warning" data-testid="callout-logistics-laptop">
-            <SectionMessageContent>
-              <Typography variant="body-2-bold">
-                {eventConfig.logisticsLaptop}
-              </Typography>
-            </SectionMessageContent>
-          </SectionMessage>
         </Section>
 
         {/* FAQ */}

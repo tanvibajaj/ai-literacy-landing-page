@@ -27,7 +27,7 @@ export function Hero() {
         vPaddingBottom={48}
         style={{ maxWidth: "1200px", margin: "0 auto", position: "relative" }}
       >
-        <Utility vFlex vFlexCol vGap={24} style={{ maxWidth: "880px" }}>
+        <Utility vFlex vFlexCol vGap={24} style={{ maxWidth: "960px" }}>
           <Utility vFlex vAlignItems="center" vGap={8}>
             <CalendarTiny aria-hidden />
             <Typography variant="overline" tag="span">
@@ -35,12 +35,19 @@ export function Hero() {
             </Typography>
           </Utility>
 
-          <Typography variant="display-2" tag="h1" data-testid="text-hero-title">
-            {eventConfig.hero.title} —{" "}
-            <span style={{ color: "var(--palette-default-active)" }}>
+          <Utility vFlex vFlexCol vGap={8}>
+            <Typography variant="display-2" tag="h1" data-testid="text-hero-title">
+              {eventConfig.hero.title}
+            </Typography>
+            <Typography
+              variant="display-4"
+              tag="p"
+              data-testid="text-hero-subtitle"
+              style={{ color: "var(--palette-default-active)" }}
+            >
               {eventConfig.hero.subtitle}
-            </span>
-          </Typography>
+            </Typography>
+          </Utility>
 
           <Typography
             variant="body-1"

@@ -40,7 +40,7 @@ export function SiteHeader() {
             }}
             data-testid="text-header-event"
           >
-            AI Literacy @ SF
+            AI Literacy with Visa in SF
           </span>
         </Utility>
 

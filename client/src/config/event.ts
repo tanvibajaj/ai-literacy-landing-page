@@ -4,14 +4,14 @@ export const eventConfig = {
     sponsorLine: "Sponsored by the Crypto Labs team at Visa",
   },
   hero: {
-    title: "AI Literacy @ SF",
+    title: "AI Literacy with Visa in SF",
     subtitle: "Learn to Build with AI",
     headline: "An evening of practical AI literacy — built around making, not lecturing.",
     sub:
       "Join us for a moderated panel and a hands-on workshop where you'll set up Claude Code, get introduced to OpenClaw, and test-drive Visa's brand-new product, Visa CLI — alongside builders, students, and curious minds from across the city.",
     primaryCta: "Apply to Attend",
     secondaryCta: "View Agenda",
-    laptopCallout: "Laptops required — you'll be building live during the workshop.",
+    laptopCallout: "Bring a laptop and a real project you're working on — you'll build live with the Crypto Labs team.",
   },
   meta: {
     dateLong: "Wednesday, May 20, 2026",
@@ -27,7 +27,6 @@ export const eventConfig = {
     "Open to the public",
     "May 20",
     "5–7 PM",
-    "Laptops required",
   ],
   why: {
     title: "Why this event?",
@@ -50,7 +49,6 @@ export const eventConfig = {
           "Whether you're a small business owner, a student, a builder, or just AI-curious, this evening is designed to meet you where you are.",
       },
     ],
-    laptopReinforce: "Bring your laptop — we'll build together.",
   },
   agenda: [
     {
@@ -61,21 +59,26 @@ export const eventConfig = {
     },
     {
       time: "5:30 – 7:00 PM",
-      title: "Hands-on workshop (laptops required)",
+      title: "Hands-on workshop",
       body:
-        "A 90-minute build session covering Claude Code access and setup, an introduction to OpenClaw, and live testing of Visa CLI — Visa's brand-new developer product.",
+        "A 90-minute build session covering Claude Code access and setup, an introduction to OpenClaw, and live testing of Visa CLI — Visa's brand-new developer product. Bring a real project you're working on and iterate on it live with the Visa Crypto Labs team.",
       bullets: [
         "Claude Code access + setup",
         "Introduction to OpenClaw",
         "Live testing of Visa CLI",
+        "Hands-on iteration on your own project with the Crypto Labs team",
       ],
     },
   ],
-  agendaNote: "Laptops are required for the workshop portion of the evening.",
   learn: [
     {
       title: "Get set up with Claude Code",
       body: "Walk through access, install, and your first useful prompt — together.",
+    },
+    {
+      title: "Bring a real project to iterate on",
+      body:
+        "Bring something you're actually working on — a side project, a small business workflow, a class assignment, an idea you've been stuck on. The Visa Crypto Labs team will sit with you and iterate on it live, using the same tools we just set up.",
     },
     {
       title: "Use AI to build real outputs, fast",
@@ -108,7 +111,6 @@ export const eventConfig = {
       "Non-technical learners",
       "Anyone curious about AI",
     ],
-    laptopNote: "Laptops are required to participate.",
   },
   logistics: [
     { label: "Date", value: "Wednesday, May 20, 2026" },
@@ -116,6 +118,11 @@ export const eventConfig = {
     {
       label: "Location",
       value: "Visa office, San Francisco — exact address shared upon confirmation",
+    },
+    {
+      label: "What to bring",
+      value:
+        "A charged laptop and, ideally, a real project you'd like to iterate on with the Crypto Labs team.",
     },
     {
       label: "Capacity",
@@ -127,7 +134,6 @@ export const eventConfig = {
         "We aim to make this event accessible to everyone. Please share any accommodations in your application and we'll follow up directly.",
     },
   ],
-  logisticsLaptop: "Laptops required — please bring a laptop to participate.",
   faqs: [
     {
       q: "Is this free?",
@@ -142,8 +148,8 @@ export const eventConfig = {
       a: "It's an open session and all ages are welcome — small business owners, students, builders, and the simply curious.",
     },
     {
-      q: "Do I need to bring a laptop?",
-      a: "Yes — laptops are required. This is hands-on and you'll build along with us. Plan to bring a charged laptop you can use freely for two hours.",
+      q: "What should I bring?",
+      a: "A charged laptop you can use freely for two hours, and ideally a real project you're working on — a side project, a workflow at your business, a class assignment, or just an idea. The Crypto Labs team will sit with you and iterate on it live.",
     },
     {
       q: "How does acceptance work?",
