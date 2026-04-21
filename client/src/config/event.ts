@@ -1,7 +1,7 @@
 export const eventConfig = {
   brand: {
-    sponsor: "Crypto Labs at Visa",
-    sponsorLine: "Sponsored by the Crypto Labs team at Visa",
+    sponsor: "Visa",
+    sponsorLine: "Hosted by Visa",
   },
   hero: {
     title: "AI Literacy with Visa in San Francisco",
@@ -11,7 +11,7 @@ export const eventConfig = {
       "Join us for a moderated panel and a hands-on workshop where you'll set up Claude Code, get introduced to OpenClaw, and test-drive Visa's brand-new product, Visa CLI — alongside builders, students, and curious minds from across the city.",
     primaryCta: "Apply to Attend",
     secondaryCta: "View Agenda",
-    laptopCallout: "Bring a laptop and a real project you're working on — you'll build live with the Crypto Labs team.",
+    laptopCallout: "Bring a laptop and a real project you're working on — you'll build live with the Visa team.",
   },
   meta: {
     dateLong: "Wednesday, May 20, 2026",
@@ -65,12 +65,12 @@ export const eventConfig = {
       time: "5:30 – 7:00 PM",
       title: "Hands-on workshop",
       body:
-        "A 90-minute build session covering Claude Code access and setup, an introduction to OpenClaw, and live testing of Visa CLI — Visa's brand-new developer product. Bring a real project you're working on and iterate on it live with the Visa Crypto Labs team.",
+        "A 90-minute build session covering Claude Code access and setup, an introduction to OpenClaw, and live testing of Visa CLI — Visa's brand-new developer product. Bring a real project you're working on and iterate on it live with the Visa team.",
       bullets: [
         "Claude Code access + setup",
         "Introduction to OpenClaw",
         "Live testing of Visa CLI",
-        "Hands-on iteration on your own project with the Crypto Labs team",
+        "Hands-on iteration on your own project with the Visa team",
       ],
     },
   ],
@@ -82,7 +82,7 @@ export const eventConfig = {
     {
       title: "Bring a real project to iterate on",
       body:
-        "Bring something you're actually working on — a side project, a small business workflow, a class assignment, an idea you've been stuck on. The Visa Crypto Labs team will sit with you and iterate on it live, using the same tools we just set up.",
+        "Bring something you're actually working on — a side project, a small business workflow, a class assignment, an idea you've been stuck on. The Visa team will sit with you and iterate on it live, using the same tools we just set up.",
     },
     {
       title: "Use AI to build real outputs, fast",
@@ -126,7 +126,7 @@ export const eventConfig = {
     {
       label: "What to bring",
       value:
-        "A charged laptop and, ideally, a real project you'd like to iterate on with the Crypto Labs team.",
+        "A charged laptop and, ideally, a real project you'd like to iterate on with the Visa team.",
     },
     {
       label: "Application deadline",
@@ -158,7 +158,7 @@ export const eventConfig = {
     },
     {
       q: "What should I bring?",
-      a: "A charged laptop you can use freely for two hours, and ideally a real project you're working on — a side project, a workflow at your business, a class assignment, or just an idea. The Crypto Labs team will sit with you and iterate on it live.",
+      a: "A charged laptop you can use freely for two hours, and ideally a real project you're working on — a side project, a workflow at your business, a class assignment, or just an idea. The Visa team will sit with you and iterate on it live.",
     },
     {
       q: "When is the application deadline?",

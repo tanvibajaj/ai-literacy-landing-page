@@ -1,6 +1,6 @@
 # AI Literacy @ SF — Landing Page
 
-A polished, Visa-branded landing page for the public **AI Literacy @ SF** event, sponsored by the Crypto Labs team at Visa. Built on the Visa Product Design System (`@visa/nova-react`) with React + Vite on the client and a small Express API on the server.
+A polished, Visa-branded landing page for the public **AI Literacy with Visa in San Francisco** event, hosted by Visa. Built on the Visa Product Design System (`@visa/nova-react`) with React + Vite on the client and a small Express API on the server.
 
 ## Tech stack
 

@@ -139,9 +139,10 @@ export default function Landing() {
         >
           <Utility
             vGap={20}
+            className="learn-grid"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(3, 1fr)",
             }}
           >
             {eventConfig.learn.map((item, i) => (
