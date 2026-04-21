@@ -137,12 +137,12 @@ export default function Landing() {
           title="Tools and workflows you can use the next day"
           intro="Everything we cover is meant to translate directly into something you can re-open at home tomorrow."
         >
-          <Utility
-            vGap={20}
+          <div
             className="learn-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",
+              gap: "20px",
             }}
           >
             {eventConfig.learn.map((item, i) => (
@@ -182,7 +182,7 @@ export default function Landing() {
                 </Utility>
               </Surface>
             ))}
-          </Utility>
+          </div>
         </Section>
 
         {/* Who should apply */}
